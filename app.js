@@ -9,12 +9,12 @@ app.use(express.json())
 const dbconnection = async ()=>{
     
         try{
-            const sequelize = new Sequelize('muzammil', 'root','', {
+            const sequelize = new Sequelize('muzammil2','root','', {
             host:'localhost',
             dialect:'mysql'
             });
             const connection = await sequelize.authenticate();
-            console.log("connection success" ,connection)
+            console.log("connection success")
         }
         catch(error){
             console.log('error, error')
