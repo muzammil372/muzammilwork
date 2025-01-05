@@ -2,7 +2,18 @@ const express = require('express');
 const {getAllusers} = require('../controller/userController');
 
 const route = express.Router()
-
+const models = require("../models")
+route.post("/user", (req,res)=>{
+   const {id,email,name} = req;
+   const User = models.users;
+   User.create({
+      id: id,
+      email: email,
+      name: name,
+      contact: contact
+   });
+   res.status(201).json({message:"user created success fully"})
+})
 route.get('/', getAllusers);
 
 route.get("/search", (req,res)=>{
